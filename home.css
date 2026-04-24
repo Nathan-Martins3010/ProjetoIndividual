@@ -1,0 +1,224 @@
+/* home.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #004aad;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+}
+
+header h2 {
+  color: #fffcae;
+  font-size: 18px;
+}
+
+header nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: #fffcae;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 600px;
+  font-size: 18px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background: #004aad;
+  color: #fffcae;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#home {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('https://4.bp.blogspot.com/-d1oVjal6FSo/UF5sHIoLyQI/AAAAAAAAGlU/9Z2y5DsiQIk/s1600/desbravador.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fffcae;
+}
+
+#sobre {
+  background: #004aad;
+  color: #fffcae;
+}
+
+.sobre-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.sobre-img img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.sobre-texto h1 {
+  font-size: 32px;
+}
+
+#valores {
+  background: white;
+  color: black;
+  text-align: center;
+}
+
+.titulo-valores {
+  margin-bottom: 40px;
+}
+
+.grid-valores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+}
+
+.valor img {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  border-radius: 50%;
+  border: 4px solid;
+  border-image: linear-gradient(45deg, #3b8fff, #faff12, #004aad) 1;
+}
+
+.valor p {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#atividades {
+  background: #002e6b;
+  color: #3b8fff;
+  text-align: center;
+}
+
+.titulo-atividades {
+  color: #3b8fff;
+  margin-bottom: 40px;
+}
+
+.cards-atividades {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #3b8fff;
+  width: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  color: black;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 15px 0 10px;
+}
+
+.card p {
+  padding: 0 15px 20px;
+  font-size: 14px;
+}
+
+#depoimentos {
+  background: #004aad;
+  color: #fffcae;
+  padding: 80px 60px;
+}
+
+.titulo-depoimentos {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.container-depoimentos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.texto-depoimentos {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bloco h3 {
+  color: #fffcae;
+  margin-bottom: 10px;
+}
+
+.bloco p {
+  color: #fff;
+  font-size: 14px;
+}
+
+.imagens-depoimentos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.imagens-depoimentos img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#contato {
+  background: #004aad;
+  color: #fff;
+}
