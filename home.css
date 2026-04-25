@@ -1,4 +1,4 @@
-/* home.css */
+/* geral */
 * {
   margin: 0;
   padding: 0;
@@ -10,12 +10,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* header */
 header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 70px;
-  background: #004aad;
+  background: #3b8fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,6 +39,7 @@ header nav a:hover {
   color: #fffcae;
 }
 
+/* estrutura das seções */
 section {
   height: 100vh;
   display: flex;
@@ -46,6 +48,7 @@ section {
   padding: 80px 60px;
 }
 
+/* textos */
 h1 {
   font-size: 42px;
   margin-bottom: 20px;
@@ -56,8 +59,11 @@ p {
   font-size: 18px;
 }
 
+/* botão */
 button {
   margin-top: 20px;
+  height: 50px;
+  width: 200px;
   padding: 12px;
   border: none;
   background: #004aad;
@@ -66,6 +72,7 @@ button {
   cursor: pointer;
 }
 
+/* home */
 #home {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
   url('https://4.bp.blogspot.com/-d1oVjal6FSo/UF5sHIoLyQI/AAAAAAAAGlU/9Z2y5DsiQIk/s1600/desbravador.jpg');
@@ -74,6 +81,7 @@ button {
   color: #fffcae;
 }
 
+/* sobre */
 #sobre {
   background: #004aad;
   color: #fffcae;
@@ -95,6 +103,7 @@ button {
   font-size: 32px;
 }
 
+/* valores */
 #valores {
   background: white;
   color: black;
@@ -113,10 +122,10 @@ button {
 }
 
 .valor img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   padding: 15px;
-  border-radius: 50%;
+  border-radius: 100px;
   border: 4px solid;
   border-image: linear-gradient(45deg, #3b8fff, #faff12, #004aad) 1;
 }
@@ -127,6 +136,7 @@ button {
   font-size: 14px;
 }
 
+/* atividades */
 #atividades {
   background: #002e6b;
   color: #3b8fff;
@@ -168,6 +178,7 @@ button {
   font-size: 14px;
 }
 
+/* depoimentos */
 #depoimentos {
   background: #004aad;
   color: #fffcae;
@@ -218,7 +229,52 @@ button {
   object-fit: cover;
 }
 
+/* contato */
 #contato {
-  background: #004aad;
+  background: #002e6b;
   color: #fff;
+}
+
+/* melhorias */
+section {
+  scroll-margin-top: 90px;
+}
+
+#home {
+  align-items: flex-start;
+  padding-left: 80px;
+}
+
+#home h1 {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+p {
+  font-size: 19px;
+}
+
+.sobre-img img {
+  width: 380px;
+}
+
+.valor img {
+  transition: 0.3s;
+}
+
+.valor img:hover {
+  transform: scale(1.1);
+}
+
+.container-depoimentos {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.imagens-depoimentos img {
+  width: 100px;
+  height: 100px;
 }
