@@ -1,0 +1,201 @@
+/* estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #3b8fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+}
+
+header h2 {
+  color: #fffcae;
+  font-size: 18px;
+}
+
+header nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: #fffcae;
+}
+
+
+/* container principal (divide a tela em lados) */
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* logo do formulário */
+.logo1 {
+    background-image: url(../Assets/img/logo1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 30vw;
+    height: 30vh;
+
+    margin-bottom: 20px;
+}
+
+/* bloco base do login/cadastro */
+.bloq {
+    display: flex;
+    background-color: rgba(235, 235, 235, 0.425);
+    padding: 20px;
+    justify-content: center; 
+    align-items: center;     
+    flex-direction: column;
+    padding-left: 5vw;
+    width: 50%;
+    height: 100vh;
+}
+
+/* lado com imagem de fundo */
+.side1 {
+    background-image: url("../img/fundoCadastro.png");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+/* título grande da lateral */
+.side2 .title {
+    color: #fffcae;
+    font-weight: bolder;
+    font-size: 10vh;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.655);
+}
+
+
+/* bloco de login */
+.log {
+    align-items: end;
+    align-content: end;
+    justify-content: center;
+    text-align: end;
+    border-radius: 30px 0 0 30px;
+}
+
+/* texto do login */
+.log .text {
+    width: 30vw;
+    margin: 2vw;
+}
+
+/* bloco de cadastro */
+.cad {
+    border-radius: 0 30px 30px 0;
+    text-align: start;
+}
+
+/* inputs do formulário */
+.bloq input {
+    border-radius: 5px;
+    border-style: none;
+    background-color: #EBEBEB;
+    height: 7vh;
+    margin-top: 20px;
+    width: 60%;
+    padding-left: 15px;
+}
+
+/* container dos inputs */
+.bloq .input {
+    display: flex;
+    padding: 20px;
+    padding-left: 0px;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px;
+}
+
+/* placeholder dos inputs */
+input::placeholder {
+    color: #6a6a6a;
+    font-size: 2vh;
+}
+
+/* lado secundário (centralização) */
+.side2 {
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+/* botão do formulário */
+.bloq button {
+    border-radius: 20px;
+    margin-top: 25px;
+    width: 10vw;
+    height: 6vh;
+    border-style: none;
+    font-weight: bold;
+    background: radial-gradient(50% 50% at 50% 50%, #78BFE4 0%, #4A89AA 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: #EBEBEB;
+    cursor: pointer;
+}
+
+.bloq button:hover {
+    transform: scale(1.1);
+}
+
+.bloq .text {
+    margin-bottom: 2px;
+}
+
+.texto {
+    text-align: start;
+    align-items: start;
+}
+
+p {
+    margin: 20px;
+}
+
+.inpEmail,
+.inpSenha {
+    margin-bottom: 80px;
+}
+
+/* mensagem de erro cadastro */
+#exibirResultadoCadastro {
+    color: rgb(172, 0, 0);
+    margin-top: 10px;
+}
+
+/* footer */
+.footer {
+  height: 7%;
+  background: #002e6b;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackSense | Cadastro</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="css/loginCadastro.css">
+    <link rel="shortcut icon" href="Assets/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+        <header>
+            <h2>CONEXÃO DESBRAVADOR</h2>
+            <nav>
+                <a href="#home">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#valores">Valores</a>
+                <a href="#atividades">Atividades</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </header>
+    <div class="container">
+
+
+        <div class="bloq side1 cad">
+            
+            
+        </div>
+
+        <div class="bloq side2">
+            <div class="logo1"></div>
+            <p class="title">Crie sua conta</p>
+
+            <div class="input">
+                <input type="text" id="inpNome" placeholder="Nome*">
+
+                <input type="text" id="inpEmail" oninput="cadValidarEmail()" placeholder="Email*">
+                <div id="exibirResultadoEmail"></div>
+
+                <input type="password" id="inpSenha" oninput="cadValidarCadastro()" placeholder="Senha*">
+                <div id="exibirResultadoCadastro"></div>
+
+                <input type="password" id="inpSenhaConf" oninput="cadValidarCadastro()" placeholder="Confirme sua Senha*">
+
+            </div>
+
+            <button onclick="CadCadastrar()" class="button">Cadastrar</button>
+
+            <p class="text">Já tem uma conta? <b><a href="login.html">Faça login!</a></b></p>
+
+        </div>
+
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Conexão Desbravador | Todos os direitos reservados</p>
+    </footer>
+
+</body>
+
+</html>
