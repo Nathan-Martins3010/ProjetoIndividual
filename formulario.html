@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário - Clube de Desbravadores</title>
+    <link rel="stylesheet" href="css/formulario.css">
+  <!-- link da fonte de texto -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="caixa-azul">
+
+    <div class="caixa-branca">
+
+      <!-- Header -->
+      <div class="form-header">
+        <div>
+          <p class="form-titulo">Perfil do Desbravador</p>
+          <p class="form-subtitulo">Preencha as informações para participar da pesquisa</p>
+        </div>
+        <span class="form-logo">Clube</span>
+      </div>
+
+      <hr class="divisor">
+
+      <!-- DADOS PESSOAIS -->
+      <div class="section-label">Dados pessoais</div>
+      <div class="grid-2">
+
+        <div class="campo campo-inteiro">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" placeholder="Seu nome aqui">
+        </div>
+
+        <div class="campo">
+          <label for="idade">Idade</label>
+          <input type="number" id="idade" placeholder="Ex: 14" min="10" max="99">
+        </div>
+
+        <div class="campo">
+          <label for="sexo">Sexo</label>
+          <select id="sexo">
+            <option value="" disabled selected>Selecione</option>
+            <option>Masculino</option>
+            <option>Feminino</option>
+            <option>Prefiro não informar</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- TRAJETÓRIA NO CLUBE -->
+      <div class="section-label">Trajetória no clube</div>
+      <div class="grid-2">
+
+        <!-- Há quantos meses o usuário participa do clube -->
+        <div class="campo">
+          <label for="tempo">Tempo no clube (meses)</label>
+          <input type="number" id="tempo" placeholder="Ex: 24" min="0">
+        </div>
+
+        <!-- Classe atual do desbravador — do Amigo ao Líder -->
+        <div class="campo">
+          <label for="classe">Classe atual</label>
+          <select id="classe">
+            <option value="" disabled selected>Selecione</option>
+            <option>Amigo</option>
+            <option>Companheiro</option>
+            <option>Pesquisador</option>
+            <option>Pioneiro</option>
+            <option>Excursionista</option>
+            <option>Guia</option>
+            <option>Líder</option>
+          </select>
+        </div>
+
+        <!-- Especialidade que o usuário mais gosta — campo livre de texto -->
+        <div class="campo campo-inteiro">
+          <label for="especialidade">Especialidade favorita</label>
+          <input type="text" id="especialidade" placeholder="Ex: Culinária, Primeiros Socorros...">
+        </div>
+
+        <!-- Quantas especialidades o usuário já concluiu no total -->
+        <div class="campo">
+          <label for="qtd">Qtd. de especialidades concluídas</label>
+          <input type="number" id="qtd" placeholder="Ex: 8" min="0">
+        </div>
+
+        <!-- Quantas vezes por mês o usuário vai ao clube -->
+        <div class="campo">
+          <label for="frequencia">Frequência (vezes por mês)</label>
+          <input type="number" id="frequencia" placeholder="Ex: 4" min="0" max="31">
+        </div>
+
+      </div>
+
+      <!-- PARTICIPAÇÃO E INTERESSE -->
+      <div class="section-label">Participação e interesse</div>
+      <div class="grid-2">
+
+        <!-- Se o usuário costuma ir a acampamentos do clube -->
+        <div class="campo">
+          <label for="acampamento">Participa de acampamentos?</label>
+          <select id="acampamento">
+            <option value="" disabled selected>Selecione</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </div>
+
+        <!-- Se o usuário tem interesse em assumir um cargo de liderança no clube -->
+        <div class="campo">
+          <label for="lideranca">Interesse em liderança?</label>
+          <select id="lideranca">
+            <option value="" disabled selected>Selecione</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Botão que dispara a validação e o envio do formulário -->
+      <button class="btn-enviar" onclick="enviar()">Enviar respostas</button>
+
+      <!-- Mensagem de sucesso — aparece quando todos os campos estão preenchidos -->
+      <div class="msg-de-sucesso" id="sucesso">Respostas enviadas com sucesso! Obrigado pela participação.</div>
+
+    </div>
+  </div>
+
+</body>
+</html>
+<script>
+    // Função chamada quando o usuário clica em "Enviar respostas"
+    function enviar() {
+
+      // Lista com os IDs de todos os campos obrigatórios do formulário
+      const ids = ['nome', 'idade', 'sexo', 'tempo', 'classe', 'especialidade', 'qtd', 'frequencia', 'acampamento', 'lideranca'];
+
+      // Começa assumindo que está tudo certo — vira false se achar algum campo vazio
+      let ok = true;
+
+      // Percorre cada campo e verifica se está preenchido
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+
+        if (!el.value) {
+          // Campo vazio — coloca borda vermelha para avisar o usuário
+          el.classList.add('error');
+          ok = false;
+        } else {
+          // Campo preenchido — remove a borda vermelha caso já tivesse
+          el.classList.remove('error');
+        }
+      });
+
+      // Só mostra o sucesso se todos os campos estiverem preenchidos
+      if (ok) {
+        document.getElementById('sucesso').style.display = 'block';
+        document.querySelector('.btn-enviar').style.display = 'none'; // esconde o botão após enviar
+      }
+    }
+  </script>

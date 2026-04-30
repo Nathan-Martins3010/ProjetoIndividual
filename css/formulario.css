@@ -1,0 +1,204 @@
+    /* estilos gerais */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Fundo geral da página */
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #e8f0fe;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    /* Bloco azul degradê que envolve o formulário — é a "moldura" azul */
+    .caixa-azul {
+      background: linear-gradient(135deg, #004aad 0%, #1a6fd4 60%, #3b8fff 100%);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    /* Caixa branca onde fica o formulário em si */
+    .caixa-branca {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2rem 2rem 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 74, 173, 0.27);
+    }
+
+    /* Cabeçalho do formulário */
+    .form-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    /* logo com o nome do clube */
+    .form-logo {
+      background: #004aad;
+      color: #fffcae;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 5px 14px;
+      border-radius: 999px;     
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Título principal */
+    .form-titulo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #004aad;
+      margin-bottom: 2px;
+    }
+
+    /* Subtítulo */
+    .form-subtitulo {
+      font-size: 13px;
+      color: #3b8fff;
+    }
+
+    /* Linha para separar */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(59, 143, 255, 0.2);
+      margin: 0 0 1.25rem;
+    }
+
+    /* Grade de 2 colunas para organizar os campos lado a lado */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+    }
+
+    /* responsividade */
+    @media (max-width: 480px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .campo.campo-inteiro { grid-column: 1; }
+    }
+
+    .campo {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    /* campo-inteiro: Campo que ocupa as 2 colunas da grade */
+    .campo.campo-inteiro { grid-column: 1 / -1; }
+
+    label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #004aad;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Estilo base de todos os campos de texto e número - revisar */
+    input[type="text"],
+    input[type="number"],
+    select {
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      color: #1a1a2e;
+      background: #f5f9ff; 
+      border: 1.5px solid rgba(59, 143, 255, 0.33);
+      border-radius: 8px;
+      padding: 9px 12px;
+      outline: none;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+    }
+
+    /* setinha personalizada */
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233b8fff' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-color: #f5f9ff;
+      padding-right: 32px;        
+      cursor: pointer;
+    }
+
+    /* estilização da borda */
+    input:focus, select:focus {
+      border-color: #3b8fff;
+      box-shadow: 0 0 0 3px rgba(59, 143, 255, 0.13);
+      background: #fff;
+    }
+
+    /* estilização do texto de dentro do input */
+    input::placeholder { color: #aac3e8; }
+
+    /* Borda vermelha para quando o campo está nulo */
+    input.error, select.error {
+      border-color: #e24b4a;
+    }
+
+    /* Título de cada seção */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #3b8fff;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 1.25rem 0 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Linha decorativa que se estende após o título de seção */
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(59, 143, 255, 0.2);
+    }
+
+    /* Botão de envio */
+    .btn-enviar {
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fffcae;              
+      background: #004aad;         
+      border: none;
+      border-radius: 10px;
+      padding: 12px 0;
+      width: 100%;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: background 0.18s, transform 0.1s;
+    }
+
+    .btn-enviar:hover { background: #3b8fff; }
+    .btn-enviar:active { transform: scale(0.98); }
+
+    /* Mensagem de sucesso  */
+    .msg-de-sucesso {
+      display: none;             
+      background: #e8f5e9;
+      border: 1.5px solid rgba(102, 187, 106, 0.33);
+      border-radius: 10px;
+      padding: 14px 18px;
+      text-align: center;
+      color: #2e7d32;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
