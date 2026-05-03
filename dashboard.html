@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Clube de Desbravadores</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h2>CONEXÃO DESBRAVADOR</h2>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#valores">Valores</a>
+          <a href="#atividades">Atividades</a>
+          <a href="login.html">Login</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </header>
+
+  <!-- Cabeçalho -->
+  <div class="db-header">
+    <div>
+      <h1>Dashboard — Clube de Desbravadores</h1>
+      <p>42 respostas coletadas · dados de maio/2026</p>
+    </div>
+    <img src="https://files.adventistas.org/institucional/pt/sites/20/2013/03/18160828/D1.png" alt="" class="db-logo">
+  </div>
+
+  <!-- Layout principal: sidebar + gráficos -->
+  <div class="db-layout">
+
+    <!-- Sidebar Esquerda -->
+    <div class="sidebar">
+
+      <!-- Cartão do índice de engajamento geral — leitura rápida da saúde do clube -->
+      <div class="index-card">
+        <h3>Índice de engajamento</h3>
+
+        <!-- Indice de engajamento -->
+        <div class="index-topo">
+          <div class="index-circulo">
+            <span class="pct">74%</span>
+            <span class="lbl">ÍNDICE</span>
+          </div>
+          <p class="index-desc">Média ponderada de frequência, acampamentos e interesse em liderança.</p>
+        </div>
+
+    <!-- Mini barras -->
+        <div class="index-bars">
+        <!-- Componentes do indice de engajamento -->
+
+          <!-- Frequência média dos membros -->
+          <div class="mini-bar-linha">
+            <span class="mini-bar-label">Frequência</span>
+            <div class="mini-barra-trilha"><div class="mini-barra-preenchimento" style="width:80%"></div></div>
+            <span class="mini-bar-pct">80%</span>
+          </div>
+
+          <!-- Participação em acampamentos -->
+          <div class="mini-bar-linha">
+            <span class="mini-bar-label">Acampamentos</span>
+            <div class="mini-barra-trilha"><div class="mini-barra-preenchimento" style="width:71%"></div></div>
+            <span class="mini-bar-pct">71%</span>
+          </div>
+
+          <!-- Interesse em assumir liderança -->
+          <div class="mini-bar-linha">
+            <span class="mini-bar-label">Liderança</span>
+            <div class="mini-barra-trilha"><div class="mini-barra-preenchimento" style="width:64%"></div></div>
+            <span class="mini-bar-pct">64%</span>
+          </div>
+
+        </div>
+      </div>
+
+    <!-- KPIs de perfil dos membros -->
+      <div class="sidebar-titulo-secao">Perfil</div>
+      <div class="kpi-card">
+
+        <!-- Média de idade -->
+        <div class="kpi-item">
+          <span class="kpi-label">Média de idade</span>
+          <div class="kpi-right">
+            <span class="kpi-valor">13,4</span>
+            <span class="kpi-contexto">anos</span>
+          </div>
+        </div>
+
+        <!-- Tempo médio que os membros estão no clube -->
+        <div class="kpi-item">
+          <span class="kpi-label">Tempo no clube</span>
+          <div class="kpi-right">
+            <span class="kpi-valor">22</span>
+            <span class="kpi-contexto">meses</span>
+          </div>
+        </div>
+
+        <!-- Quantidade média de especialidades concluídas por pessoa -->
+        <div class="kpi-item">
+          <span class="kpi-label">Especialidades</span>
+          <div class="kpi-right">
+            <span class="kpi-valor">7,3</span>
+            <span class="kpi-contexto">por pessoa</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KPIs de engajamento dos membros -->
+      <div class="sidebar-titulo-secao">Engajamento</div>
+      <div class="kpi-card">
+
+        <!-- Quantas vezes por mês os membros frequentam o clube em média -->
+        <div class="kpi-item">
+          <span class="kpi-label">Frequência</span>
+          <div class="kpi-right">
+            <span class="kpi-valor">3,2×</span>
+            <span class="kpi-contexto">por mês</span>
+          </div>
+        </div>
+
+        <!-- Percentual de membros que participam de acampamentos -->
+        <div class="kpi-item">
+          <span class="kpi-label">Acampamentos</span>
+          <div class="kpi-right">
+            <span class="kpi-valor">71%</span>
+            <span class="kpi-contexto">participam</span>
+          </div>
+        </div>
+
+        <!-- Percentual de membros com interesse em assumir liderança no clube -->
+        <div class="kpi-item">
+          <span class="kpi-label">Liderança</span>
+          <div class="kpi-right">
+            <span class="kpi-valor">64%</span>
+            <span class="kpi-contexto">têm interesse</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 
+         ÁREA PRINCIPAL — GRÁFICOS
+          -->
+    <div class="charts-area">
+
+      <!-- Gráfico de membros masculinos e femininos -->
+      <div class="chart-card">
+        <p class="grafico-titulo">Distribuição por sexo</p>
+        <p class="grafico-subtitulo">Composição do grupo</p>
+        <div class="legend-linha">
+          <span class="legend-item"><span class="legenda-quadrado" style="background:#004aad"></span>Masculino 55%</span>
+          <span class="legend-item"><span class="legenda-quadrado" style="background:#3b8fff"></span>Feminino 45%</span>
+        </div>
+        <div style="position:relative; width:100%; height:260px;">
+          <canvas id="chartSexo" role="img" aria-label="Gráfico de rosca: 55% masculino e 45% feminino.">55% masculino, 45% feminino.</canvas>
+        </div>
+      </div>
+
+      <!-- Ranking das especialidades mais escolhidas -->
+      <div class="chart-card">
+        <p class="grafico-titulo">Especialidades favoritas</p>
+        <p class="grafico-subtitulo">Ranking das mais escolhidas</p>
+        <ul class="ranking-list">
+
+          <!-- Especialidade com mais votos -->
+          <li>
+            <span class="rank-num">1</span>
+            Primeiros Socorros
+            <div class="rank-bar-wrap"><div class="rank-bar" style="width:100%"></div></div>
+            <span class="rank-contagem">18</span>
+          </li>
+
+          <!-- 2º lugar -->
+          <li>
+            <span class="rank-num">2</span>
+            Culinária
+            <div class="rank-bar-wrap"><div class="rank-bar" style="width:83%"></div></div>
+            <span class="rank-contagem">15</span>
+          </li>
+
+          <!-- 3º lugar -->
+          <li>
+            <span class="rank-num">3</span>
+            Natureza
+            <div class="rank-bar-wrap"><div class="rank-bar" style="width:72%"></div></div>
+            <span class="rank-contagem">13</span>
+          </li>
+
+          <!-- 4º lugar -->
+          <li>
+            <span class="rank-num">4</span>
+            Música
+            <div class="rank-bar-wrap"><div class="rank-bar" style="width:56%"></div></div>
+            <span class="rank-contagem">10</span>
+          </li>
+
+          <!-- 5º lugar -->
+          <li>
+            <span class="rank-num">5</span>
+            Artes Manuais
+            <div class="rank-bar-wrap"><div class="rank-bar" style="width:44%"></div></div>
+            <span class="rank-contagem">8</span>
+          </li>
+
+          <!-- 6º lugar -->
+          <li>
+            <span class="rank-num">6</span>
+            Astronomia
+            <div class="rank-bar-wrap"><div class="rank-bar" style="width:33%"></div></div>
+            <span class="rank-contagem">6</span>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Gráfico de quantidade de membros em cada classe -->
+      <div class="chart-card">
+        <p class="grafico-titulo">Membros por classe</p>
+        <p class="grafico-subtitulo">Pirâmide de progressão do clube</p>
+        <div class="legenda">
+          <span class="legenda-item"><span class="legenda-quadrado" style="background:#004aad"></span>Qtd. de membros</span>
+        </div>
+        <div style="position:relative; width:100%; height:260px;">
+    
+          <canvas id="chartClasses" role="img" aria-label="Gráfico de barras: Amigo 10, Companheiro 9, Pesquisador 8, Pioneiro 7, Excursionista 4, Guia 3, Líder 1.">Amigo 10, Companheiro 9, Pesquisador 8, Pioneiro 7, Excursionista 4, Guia 3, Líder 1.</canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico de distribuição de frequência mensal dos membros -->
+      <div class="chart-card">
+        <p class="grafico-titulo">Frequência mensal</p>
+        <p class="grafico-subtitulo">Quantos membros vão ao clube cada quantidade de vezes por mês</p>
+        <div class="legenda">
+          <span class="legenda-item"><span class="legenda-quadrado" style="background:#3b8fff"></span>Quantidade de membros</span>
+        </div>
+        <div style="position:relative; width:100%; height:260px;">
+          <canvas id="chartFreq" role="img" aria-label="Frequência mensal: 1x 3 membros, 2x 7, 3x 12, 4x 14, 5x+ 6.">1x: 3, 2x: 7, 3x: 12, 4x: 14, 5x+: 6.</canvas>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  
+
+</body>
+</html>
+<script>
+
+    // Fonte e tamanho padrão para todos os gráficos Chart.js
+    Chart.defaults.font.family = 'Nunito, sans-serif';
+    Chart.defaults.font.size = 13;
+
+    // Gráfico de rosca — proporção entre membros masculinos e femininos
+    new Chart(document.getElementById('chartSexo'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Masculino', 'Feminino'],
+        datasets: [{
+          data: [55, 45],
+          backgroundColor: ['#004aad', '#3b8fff'],
+          borderColor: ['#fff', '#fff'],
+          borderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '62%',
+        plugins: {
+          legend: { display: false }, // legenda customizada em HTML acima do gráfico
+          tooltip: {
+            callbacks: {
+              label: ctx => ` ${ctx.label}: ${ctx.parsed}%`
+            }
+          }
+        }
+      }
+    });
+
+    // Gráfico das classes
+    new Chart(document.getElementById('chartClasses'), {
+      type: 'bar',
+      data: {
+        labels: [
+          'Amigo',         
+          'Companheiro',   
+          'Pesquisador',   
+          'Pioneiro',      
+          'Excursionista', 
+          'Guia',          
+          'Líder'          
+        ],
+        datasets: [{
+          label: 'Membros',
+          data: [10, 9, 8, 7, 4, 3, 1],
+          backgroundColor: ['#004aad','#0f5cc7','#1a6fd4','#2a82e0','#3b8fff','#6aaeff','#9dcbff'],
+          borderRadius: 7,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { font: { size: 12 }, color: '#555', autoSkip: false, maxRotation: 30 }
+          },
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(0,0,0,0.06)' },
+            ticks: { stepSize: 2, font: { size: 13 }, color: '#888' }
+          }
+        }
+      }
+    });
+
+    // Gráfico de frequência de visitas mensais dos membros
+    new Chart(document.getElementById('chartFreq'), {
+      type: 'bar',
+      data: {
+        labels: ['1× por mês', '2× por mês', '3× por mês', '4× por mês', '5× ou mais'],
+        datasets: [{
+          label: 'Membros',
+          data: [3, 7, 12, 14, 6],
+          backgroundColor: '#3b8fff',
+          borderRadius: 6,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        indexAxis: 'y', 
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: {
+            beginAtZero: true,
+            grid: { color: 'rgba(0,0,0,0.06)' },
+            ticks: { stepSize: 2, font: { size: 13 }, color: '#888' }
+          },
+          y: {
+            grid: { display: false },
+            ticks: { font: { size: 13 }, color: '#555' }
+          }
+        }
+      }
+    });
+
+  </script>

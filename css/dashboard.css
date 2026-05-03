@@ -1,0 +1,382 @@
+/* Estilos gerais */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #004aad 0%, #1a6fd4 60%, #3b8fff 100%);
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+
+    /* header */
+        header {
+        position: fixed;
+        top: 0;
+        min-width: 100%;
+        height: 70px;
+        background: #3b8fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 40px;
+        z-index: 1000;
+        }
+
+        header h2 {
+        color: #fffcae;
+        font-size: 18px;
+        }
+
+        header nav a {
+        color: #fff;
+        margin-left: 20px;
+        text-decoration: none;
+        }
+
+        header nav a:hover {
+        color: #fffcae;
+        }
+
+    /* Cabeçalho */
+    .db-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      margin-top: 60px;
+    }
+
+    /* Título */
+    .db-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 4px;
+    }
+
+    /* Subtítulo */
+    .db-header p {
+      font-size: 14px;
+      color: rgba(255, 252, 174, 0.85);
+      margin: 0;
+    }
+
+    /* Logo */
+    .db-logo {
+      max-width: 50px;
+      max-width: 50px;
+    }
+
+    /* sidebar + área de gráficos */
+    .db-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    /* SIDEBAR ESQUERDA */
+
+    /* Coluna lateral com o índice de engajamento e todos os KPIs */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Cartão do índice de engajamento */
+    .index-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+
+    .index-card h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #004aad;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    /* Indice de engajamento */
+    .index-topo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .index-circulo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #004aad, #3b8fff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .index-circulo .pct {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fffcae;
+      line-height: 1;
+    }
+  
+    .index-circulo .lbl {
+      font-size: 9px;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.05em;
+    }
+
+    /* descrição */
+    .index-desc {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    /* mini barras */
+    .index-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mini-bar-linha {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .mini-bar-label {
+      width: 88px;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .mini-barra-trilha {
+      flex: 1;
+      height: 7px;
+      background: #f0f5ff;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .mini-barra-preenchimento {
+      height: 100%;
+      border-radius: 4px;
+      background: #3b8fff;
+    }
+
+    .mini-bar-pct {
+      width: 30px;
+      text-align: right;
+      font-weight: 700;
+      color: #004aad;
+      font-size: 12px;
+    }
+
+
+    /* KPIs */
+    .sidebar-titulo-secao {
+      font-size: 11px;
+      font-weight: 700;
+      color: #fffcae;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    /* Linha após o título da seção */
+    .sidebar-titulo-secao::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* Cartão de fundo da KPI */
+    .kpi-card {
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* indicador perfil */
+    .kpi-item { 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* borda */
+    .kpi-item:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    /* Nome do indicador */
+    .kpi-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+    }
+
+    .kpi-right {
+      text-align: right;
+    }
+
+    /* Valor do indicador  */
+    .kpi-valor {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      display: block;
+    }
+
+    /* Contexto do indicador */
+    .kpi-contexto {
+      font-size: 11px;
+      color: #fffcae;
+    }
+
+    /* 
+       ÁREA PRINCIPAL — GRÁFICOS
+        */
+
+    /* Grade dos gráficos 2x2 */
+    .charts-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    /* Gráfico que ocupa a tela inteira */
+    .chart-full { 
+        grid-column: 1 / -1; 
+    }
+
+    /* Cartão com o fundo branco */
+    .chart-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem 1rem;
+    }
+
+    /* Título do gráfico */
+    .grafico-titulo {
+      font-size: 14px;
+      font-weight: 700;
+      color: #004aad;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    /* Subtítulo do gráfico */
+    .grafico-subtitulo {
+      font-size: 13px;
+      color: #3b8fff;
+      margin-bottom: 12px;
+    }
+
+    /* Linha de legenda (masculino/feminino) */
+    .legend-linha {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    /* Legenda */
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* Quadradinho da legenda */
+    .legenda-quadrado {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /*  Gráfico do ranking das especialidades   */
+
+    /* Lista das especialidades */
+    .ranking-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Linha de cada especialidade no ranking */
+    .ranking-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+      color: #1a1a2e;
+    }
+
+    .ranking-list li:last-child { border-bottom: none; }
+
+    /* Posição no ranking */
+    .rank-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: #004aad;
+      width: 18px;
+      text-align: center;
+    }
+
+    /* Trilha de fundo da barra do ranking */
+    .rank-bar-wrap {
+      flex: 1;
+      background: #f0f5ff;
+      border-radius: 4px;
+      height: 9px;
+      overflow: hidden;
+    }
+
+    /* Barra do número de votos */
+    .rank-bar {
+      height: 100%;
+      border-radius: 4px;
+      background: #3b8fff;
+    }
+
+    .rank-contagem {
+      font-size: 13px;
+      color: #3b8fff;
+      font-weight: 700;
+      min-width: 22px;
+      text-align: right;
+    }

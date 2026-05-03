@@ -5,10 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário - Clube de Desbravadores</title>
     <link rel="stylesheet" href="css/formulario.css">
-  <!-- link da fonte de texto -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <header>
+        <h2>CONEXÃO DESBRAVADOR</h2>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#valores">Valores</a>
+          <a href="#atividades">Atividades</a>
+          <a href="login.html">Login</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </header>
 
   <div class="caixa-azul">
 
@@ -20,7 +32,7 @@
           <p class="form-titulo">Perfil do Desbravador</p>
           <p class="form-subtitulo">Preencha as informações para participar da pesquisa</p>
         </div>
-        <span class="form-logo">Clube</span>
+        <img src="https://files.adventistas.org/institucional/pt/sites/20/2013/03/18160828/D1.png" alt="" class="form-logo">
       </div>
 
       <hr class="divisor">
@@ -45,7 +57,6 @@
             <option value="" disabled selected>Selecione</option>
             <option>Masculino</option>
             <option>Feminino</option>
-            <option>Prefiro não informar</option>
           </select>
         </div>
 
@@ -122,25 +133,25 @@
 
       </div>
 
-      <!-- Botão que dispara a validação e o envio do formulário -->
       <button class="btn-enviar" onclick="enviar()">Enviar respostas</button>
 
-      <!-- Mensagem de sucesso — aparece quando todos os campos estão preenchidos -->
       <div class="msg-de-sucesso" id="sucesso">Respostas enviadas com sucesso! Obrigado pela participação.</div>
 
     </div>
   </div>
+  <footer class="footer">
+        <p>© 2026 Conexão Desbravador | Todos os direitos reservados</p>
+    </footer>
 
 </body>
 </html>
 <script>
-    // Função chamada quando o usuário clica em "Enviar respostas"
     function enviar() {
 
       // Lista com os IDs de todos os campos obrigatórios do formulário
       const ids = ['nome', 'idade', 'sexo', 'tempo', 'classe', 'especialidade', 'qtd', 'frequencia', 'acampamento', 'lideranca'];
 
-      // Começa assumindo que está tudo certo — vira false se achar algum campo vazio
+      // Começa assumindo que está tudo certo e se tiver algum campo vazio fica false
       let ok = true;
 
       // Percorre cada campo e verifica se está preenchido
@@ -148,11 +159,11 @@
         const el = document.getElementById(id);
 
         if (!el.value) {
-          // Campo vazio — coloca borda vermelha para avisar o usuário
+          // Campo vazio = coloca borda vermelha
           el.classList.add('error');
           ok = false;
         } else {
-          // Campo preenchido — remove a borda vermelha caso já tivesse
+          // Campo preenchido = remove a borda vermelha
           el.classList.remove('error');
         }
       });
@@ -160,7 +171,7 @@
       // Só mostra o sucesso se todos os campos estiverem preenchidos
       if (ok) {
         document.getElementById('sucesso').style.display = 'block';
-        document.querySelector('.btn-enviar').style.display = 'none'; // esconde o botão após enviar
+        document.querySelector('.btn-enviar').style.display = 'none';
       }
     }
   </script>
