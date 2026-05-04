@@ -16,7 +16,8 @@
         header {
         position: fixed;
         top: 0;
-        min-width: 100%;
+        left: 0;   
+        right: 0;
         height: 70px;
         background: #3b8fff;
         display: flex;
