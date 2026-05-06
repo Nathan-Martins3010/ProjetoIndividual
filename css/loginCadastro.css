@@ -12,15 +12,16 @@ body {
 /* header */
 header {
   position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background: #3b8fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  z-index: 1000;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background: linear-gradient(90deg, #1a56b0 0%, #2e74d4 40%, #5b9ef5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 1000;
+      border-bottom: 3px solid #a8c8ff;
 }
 
 header h2 {
@@ -56,6 +57,7 @@ header nav a:hover {
     height: 30vh;
 
     margin-bottom: 20px;
+    border-radius: 0;
 }
 
 /* bloco base do login/cadastro */
@@ -63,10 +65,12 @@ header nav a:hover {
     display: flex;
     background-color: rgba(235, 235, 235, 0.425);
     padding: 20px;
-    justify-content: center; 
-    align-items: center;     
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 80px;
     width: 50%;
     height: 100vh;
 }
@@ -92,17 +96,18 @@ header nav a:hover {
 
 /* bloco de login */
 .log {
-    align-items: end;
-    align-content: end;
+    align-items: center;
+    align-content: center;
     justify-content: center;
-    text-align: end;
+    text-align: center;
     border-radius: 30px 0 0 30px;
 }
 
 /* texto do login */
 .log .text {
-    width: 30vw;
-    margin: 2vw;
+    width: 100%;
+    margin: 0 0 20px 0;
+    text-align: center;
 }
 
 /* bloco de cadastro */
@@ -117,7 +122,7 @@ header nav a:hover {
     border-style: none;
     background-color: #EBEBEB;
     height: 7vh;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 60%;
     padding-left: 15px;
 }
@@ -125,14 +130,14 @@ header nav a:hover {
 /* container dos inputs */
 .bloq .input {
     display: flex;
-    padding: 20px;
-    padding-left: 0px;
+    padding: 10px 0;
     width: 100%;
     align-items: center;
     align-content: center;
     justify-content: center;
     flex-direction: column;
     margin: 0px;
+    gap: 4px;
 }
 
 /* placeholder dos inputs */
@@ -150,21 +155,30 @@ input::placeholder {
 
 /* botão do formulário */
 .bloq button {
-    border-radius: 20px;
-    margin-top: 25px;
-    width: 10vw;
-    height: 6vh;
-    border-style: none;
-    font-weight: bold;
-    background: radial-gradient(50% 50% at 50% 50%, #78BFE4 0%, #4A89AA 100%);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    color: #EBEBEB;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fffcae;
+    background: #004aad;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 32px;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
     cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: background 0.18s, transform 0.1s;
+    box-shadow: none;
 }
 
 .bloq button:hover {
-    transform: scale(1.1);
+    background: #3b8fff;
+    transform: scale(1.0);
+}
+
+.bloq button:active {
+    transform: scale(0.98);
 }
 
 .bloq .text {
@@ -182,7 +196,7 @@ p {
 
 .inpEmail,
 .inpSenha {
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 /* mensagem de erro cadastro */
