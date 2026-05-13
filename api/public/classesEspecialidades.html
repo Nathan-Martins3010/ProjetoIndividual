@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes e Especialidades — Conexão Desbravador</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/classesEspecialidades.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="js/classesEspecialidades.js"></script>
+</head>
+<body>
+
+  <header>
+    <h2>CONEXÃO DESBRAVADOR</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="classesEspecialidades.html">Classes e Especialidades</a>
+      <a href="#contato">Contato</a>
+      <a href="formulario.html">Formulário</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- Topo da página -->
+  <div class="headerSecundario">
+    <h1>Classes e Especialidades</h1>
+  </div>
+
+ <!-- PROGRESSÃO DE CLASSES -->
+<div class="secao">
+
+  <div class="secaoTitulo">
+    Progressão de classes — clique para saber mais
+  </div>
+
+  <!-- Linha do tempo -->
+  <div class="linhaDoTempo">
+
+    <div class="linhaTempoItem" onclick="abrirModal(0)">
+      <div class="linhaTempoPonto">1</div>
+      <div class="linhaTempoNome">Amigo</div>
+    </div>
+
+    <div class="linhaTempoItem" onclick="abrirModal(1)">
+      <div class="linhaTempoPonto">2</div>
+      <div class="linhaTempoNome">Companheiro</div>
+    </div>
+
+    <div class="linhaTempoItem" onclick="abrirModal(2)">
+      <div class="linhaTempoPonto">3</div>
+      <div class="linhaTempoNome">Pesquisador</div>
+    </div>
+
+    <div class="linhaTempoItem" onclick="abrirModal(3)">
+      <div class="linhaTempoPonto">4</div>
+      <div class="linhaTempoNome">Pioneiro</div>
+    </div>
+
+    <div class="linhaTempoItem" onclick="abrirModal(4)">
+      <div class="linhaTempoPonto">5</div>
+      <div class="linhaTempoNome">Excursionista</div>
+    </div>
+
+    <div class="linhaTempoItem" onclick="abrirModal(5)">
+      <div class="linhaTempoPonto">6</div>
+      <div class="linhaTempoNome">Guia</div>
+    </div>
+
+    <div class="linhaTempoItem" onclick="abrirModal(6)">
+      <div class="linhaTempoPonto">7</div>
+      <div class="linhaTempoNome">Líder</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ESPECIALIDADES -->
+<div class="secao">
+
+  <div class="secaoTitulo">Especialidades</div>
+
+  <!-- FILTROS -->
+  <div class="filtros">
+
+    <button class="filtroBtn ativo" onclick="filtrar(this, 'todas')">
+      Todas
+    </button>
+
+    <button class="filtroBtn" onclick="filtrar(this, 'cienciaSaude')">
+      Ciencia e Saúde
+    </button>
+
+    <button class="filtroBtn" onclick="filtrar(this, 'natureza')">
+      Estudo da Natureza
+    </button>
+
+    <button class="filtroBtn" onclick="filtrar(this, 'recreativas')">
+      Atividades Recreativas
+    </button>
+
+    <button class="filtroBtn" onclick="filtrar(this, 'missionarias')">
+      Atividades Missionarias
+    </button>
+
+    <button class="filtroBtn" onclick="filtrar(this, 'artes')">
+      Artes e habilidades manuais
+    </button>
+
+  </div>
+
+  <!-- GRADE -->
+  <div class="gradeEspecialidades" id="gradeEsp">
+
+    <!-- Ciencia e Saúde -->
+    <div class="espeCard" data-cat="cienciaSaude">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/600x700/647/647163/produto/30554445/whatsapp_image_2025-01-24_at_11-56-03-removebg-preview-rv3jgaxwgc.png" alt="">
+      </div>
+
+      <div class="espeNome">
+        Primeiros Socorros
+      </div>
+
+      <div class="espeCat">
+        Saúde
+      </div>
+
+    </div>
+
+    <div class="espeCard" data-cat="cienciaSaude">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/600x700/647/647163/produto/30554454/whatsapp_image_2025-01-24_at_12-00-49-removebg-preview-u56mdwy6fx.png" alt="">
+      </div>
+
+      <div class="espeNome">
+        Sistema nervoso
+      </div>
+
+      <div class="espeCat">
+        Saúde
+      </div>
+
+    </div>
+
+    <!-- Natureza -->
+    <div class="espeCard" data-cat="natureza">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/2500x2500/647/647163/produto/31334706/whatsapp-image-2025-10-06-at-11-55-01-dvs5btc1sm.jpeg" alt="">
+      </div>
+
+      <div class="espeNome">
+        Mamíferos
+      </div>
+
+      <div class="espeCat">
+        Natureza
+      </div>
+
+    </div>
+
+    <div class="espeCard" data-cat="natureza">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/600x700/647/647163/produto/31334692/whatsapp-image-2025-10-06-at-11-42-09-97v9jr7ruu.jpeg" alt="">
+      </div>
+
+      <div class="espeNome">
+        Felinos
+      </div>
+
+      <div class="espeCat">
+        Natureza
+      </div>
+
+    </div>
+
+    <!-- Recreativas -->
+    <div class="espeCard" data-cat="artes">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/600x700/647/647163/produto/31335876/whatsapp_image_2024-07-31_at_16-01-57-removebg-preview-mamrsmzej1.png" alt="">
+      </div>
+
+      <div class="espeNome">
+        Fogueira e cozinha ao ar livre
+      </div>
+
+      <div class="espeCat">
+        Atividades Recreativas
+      </div>
+
+    </div>
+
+    <div class="espeCard" data-cat="artes">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/600x700/647/647163/produto/31335891/whatsapp_image_2024-08-13_at_17-18-27-removebg-preview-4fem5xf6ie.png" alt="">
+      </div>
+
+      <div class="espeNome">
+        Mapa e bussola
+      </div>
+
+      <div class="espeCat">
+        Atividades Recreativas
+      </div>
+
+    </div>
+
+    <!-- Missionarias -->
+    <div class="espeCard" data-cat="missionarias">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://mda.wiki.br/site/@imgs_wiki_cp/imagem@am002.png" alt="">
+      </div>
+
+      <div class="espeNome">
+        Arte em fantoche
+      </div>
+
+      <div class="espeCat">
+        Serviço
+      </div>
+
+    </div>
+
+    <div class="espeCard" data-cat="missionarias">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/600x600/1387/1387775/produto/362974412/67-cms1qtjgb3.png" alt="">
+      </div>
+
+      <div class="espeNome">
+        Asseio e cortesia cristã
+      </div>
+
+      <div class="espeCat">
+        Serviço
+      </div>
+
+    </div>
+
+    <!-- Artes -->
+    <div class="espeCard" data-cat="artes">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/800x800/647/647163/produto/30122577/whatsapp-image-2025-10-06-at-09-35-37-1effm6dy06.jpeg" alt="">
+      </div>
+
+      <div class="espeNome">
+        Escultura
+      </div>
+
+      <div class="espeCat">
+        Artes e habilidades manuais
+      </div>
+
+    </div>
+
+    <div class="espeCard" data-cat="artes">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/2500x2500/647/647163/produto/30122530/whatsapp-image-2025-10-06-at-09-34-08-6rx1cra1gu.jpeg" alt="">
+      </div>
+
+      <div class="espeNome">
+        Embalagens
+      </div>
+
+      <div class="espeCat">
+        Artes e habilidades manuais
+      </div>
+
+    </div>
+
+    <div class="espeCard" data-cat="artes">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://cdn.awsli.com.br/2500x2500/647/647163/produto/30122517/whatsapp-image-2025-10-06-at-09-38-26-rnxxlolcl0.jpeg" alt="">
+      </div>
+
+      <div class="espeNome">
+        E.V.A
+      </div>
+
+      <div class="espeCat">
+        Artes e habilidades manuais
+      </div>
+
+    </div>
+
+    <div class="espeCard" data-cat="recreativas">
+
+      <div class="espeIcone" id="imgs">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQicnPKvnLbXPfsLD-eA9fvlg9WDHhADfXELA&s" alt="">
+      </div>
+
+      <div class="espeNome">
+        Cultura fisica
+      </div>
+
+      <div class="espeCat">
+        Atividades recreativas
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- POP-UP DAS CLASSES -->
+  <div class="modal-fundo" id="modalFundo" onclick="fecharModal(event)">
+    <div class="modal">
+
+      <button class="modal-x" onclick="fecharModal(null)">✕</button>
+
+      <div class="modal-nivel" id="modalNivel"></div>
+
+      <div class="modal-titulo" id="modalTitulo"></div>
+
+      <div class="modal-desc" id="modalDesc"></div>
+
+      <div class="modal-tags" id="modalTags"></div>
+
+      <button class="modal-fechar" onclick="fecharModal(null)">Fechar</button>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+        <p>© 2026 Conexão Desbravador | Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>

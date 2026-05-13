@@ -341,13 +341,13 @@
       width: 220px;
     }
 
-    .info h4 {
+    .informacao h4 {
       margin-top: 20px;
       font-size: 12px;
       opacity: 0.8;
     }
 
-    .info p {
+    .informacao p {
       font-size: 20px;
       margin-top: 5px;
     }
@@ -429,23 +429,23 @@
       gap: 40px;
     }
 
-    .footer-col {
+    .footerComplementar {
       max-width: 250px;
       display: flex;
       flex-direction: column;
     }
 
-    .footer-col h3,
-    .footer-col h4 {
+    .footerComplementar h3,
+    .footerComplementar h4 {
       margin-bottom: 15px;
     }
 
-    .footer-col p {
+    .footerComplementar p {
       font-size: 14px;
       margin-bottom: 10px;
     }
 
-    .footer-col a {
+    .footerComplementar a {
       text-decoration: none;
       color: #fff;
       margin-bottom: 8px;
@@ -453,11 +453,11 @@
       transition: 0.3s;
     }
 
-    .footer-col a:hover {
+    .footerComplementar a:hover {
       color: #3b8fff;
     }
 
-    .footer-bottom {
+    .footer {
       border-top: 1px solid rgba(255,255,255,0.2);
       margin-top: 30px;
       padding-top: 15px;

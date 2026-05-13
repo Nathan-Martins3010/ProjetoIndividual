@@ -61,7 +61,7 @@ header nav a:hover {
 }
 
 /* bloco base do login/cadastro */
-.bloq {
+.bloco {
     display: flex;
     background-color: rgba(235, 235, 235, 0.425);
     padding: 20px;
@@ -76,7 +76,7 @@ header nav a:hover {
 }
 
 /* lado com imagem de fundo */
-.side1 {
+.lado1 {
     background-image: url("../img/fundoCadastro.png");
     background-color: #cccccc;
     background-position: center;
@@ -86,7 +86,7 @@ header nav a:hover {
 }
 
 /* título grande da lateral */
-.side2 .title {
+.lado2 .titulo {
     color: #fffcae;
     font-weight: bolder;
     font-size: 10vh;
@@ -95,7 +95,7 @@ header nav a:hover {
 
 
 /* bloco de login */
-.log {
+.login {
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -104,7 +104,7 @@ header nav a:hover {
 }
 
 /* texto do login */
-.log .text {
+.login .text {
     width: 100%;
     margin: 0 0 20px 0;
     text-align: center;
@@ -117,7 +117,7 @@ header nav a:hover {
 }
 
 /* inputs do formulário */
-.bloq input {
+.bloco input {
     border-radius: 5px;
     border-style: none;
     background-color: #EBEBEB;
@@ -128,7 +128,7 @@ header nav a:hover {
 }
 
 /* container dos inputs */
-.bloq .input {
+.bloco .input {
     display: flex;
     padding: 10px 0;
     width: 100%;
@@ -154,7 +154,7 @@ input::placeholder {
 }
 
 /* botão do formulário */
-.bloq button {
+.bloco button {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: 700;
@@ -172,16 +172,16 @@ input::placeholder {
     box-shadow: none;
 }
 
-.bloq button:hover {
+.bloco button:hover {
     background: #3b8fff;
     transform: scale(1.0);
 }
 
-.bloq button:active {
+.bloco button:active {
     transform: scale(0.98);
 }
 
-.bloq .text {
+.bloco .text {
     margin-bottom: 2px;
 }
 
