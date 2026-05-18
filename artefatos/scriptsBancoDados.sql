@@ -41,3 +41,4 @@ VALUES
 (4, '2008-08-15', 'F', 2, 'Amigo', 'Ordem Unida', 4, 6, 'Nao', 'Nao'),
 (5, '2006-12-01', 'M', 7, 'Guia', 'Acampamento', 12, 10, 'Sim', 'Sim');
 SELECT * FROM respostaFormulario;
+SELECT * FROM usuario;

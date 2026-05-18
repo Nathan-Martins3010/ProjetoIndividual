@@ -7,45 +7,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Conexão Desbravador </title>
   <link rel="stylesheet" href="css/home.css">
+  <script src="./js/navbar.js"></script>
 
 </head>
+<!-- -- o que falta: 
+  colocar videos no que é o clube, 
+  colocar depoimentos de dbvs do meu clube (falta Andrey e Lara) 
+  fazer repetições -- tirar forEach
+  colocar frase no final do ppt - terminar apresentação
+  arrumar banco de dados (script e modelagem) - campo codigoDiretor, tipoUsuario, 
+  fkUsuario(não esta pegando do sessionStorage)
+  arrumar campo data de nascimento no formulario
+  arrumar estilo do icone de usuario
+  arrumar os footers
+   -->
 
 <body>
 
-  <header>
+      <header>
+        <h2>CONEXÃO DESBRAVADOR</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="classesEspecialidades.html">Classes e Especialidades</a>
+            <a href="index.html#contato">Contato</a>
+            <a href="formulario.html">Formulário</a>
+            <a href="login.html" id="navLogin">Login</a>
 
-    <h2>
-      CONEXÃO DESBRAVADOR
-    </h2>
-
-    <nav>
-
-      <a href="index.html">
-        Home
-      </a>
-
-      <a href="dashboard.html">
-        Dashboard
-      </a>
-
-      <a href="classesEspecialidades.html">
-        Classes e Especialidades
-      </a>
-
-      <a href="#contato">
-        Contato
-      </a>
-
-      <a href="formulario.html">
-        Formulário
-      </a>
-
-      <a href="login.html">
-        Login
-      </a>
-    </nav>
-
-  </header>
+            <!-- Ícone do usuário -->
+            <span id="navUsuario" style="display:none; align-items:center; gap:6px; color:#fff; margin-left:16px;">
+                <span style="font-size:18px;">👤</span>
+                <span id="nomeUsuario" style="font-size:14px; font-weight:600;"></span>
+            </span>
+        </nav>
+    </header>
 
   <!-- HOME -->
   <section id="home">
@@ -55,6 +50,7 @@
     <button class="btnEstilizado">
       SAIBA MAIS
     </button>
+
 
   </section>
 
@@ -336,7 +332,6 @@
 
         <a 
           href="formulario.html" 
-          target="_blank"
         >
           <button class="btnEstilizado">
             RESPONDER FORMULÁRIO

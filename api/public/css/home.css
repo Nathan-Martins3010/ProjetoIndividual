@@ -60,7 +60,7 @@
       font-size: 18px;
     }
 /* botão estilizado */
-    .btn-estilizado {
+    .btnEstilizado {
       font-family: Arial, sans-serif;
       font-size: 15px;
       font-weight: 700;
@@ -78,11 +78,11 @@
       display: inline-block;
     }
  
-    .btn-estilizado:hover {
+    .btnEstilizado:hover {
       background: #3b8fff;
     }
  
-    .btn-estilizado:active {
+    .btnEstilizado:active {
       transform: scale(0.98);
     }
     
@@ -102,19 +102,19 @@
       color: #fffcae;
     }
 
-    .sobre-container {
+    .sobreContainer {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 40px;
     }
 
-    .sobre-img img {
+    .sobreImg img {
       width: 300px;
       border-radius: 10px;
     }
 
-    .sobre-texto h1 {
+    .sobreTexto h1 {
       font-size: 32px;
     }
 
@@ -125,11 +125,11 @@
       text-align: center;
     }
 
-    .titulo-valores {
+    .tituloValores {
       margin-bottom: 40px;
     }
 
-    .grid-valores {
+    .gridValores {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 40px;
@@ -158,12 +158,12 @@
       text-align: center;
     }
 
-    .titulo-atividades {
+    .tituloAtividades {
       color: #3b8fff;
       margin-bottom: 70px;
     }
 
-    .cards-atividades {
+    .cardsAtividades {
       display: flex;
       justify-content: center;
       gap: 40px;
@@ -201,13 +201,13 @@
       align-items: center;
     }
     
-    .titulo-depoimentos {
+    .tituloDepoimentos {
       text-align: center;
       margin-bottom: 40px;
     }
     
     /* grade dos cards */
-    .grade-depoimentos {
+    .gradeDepoimentos {
       display: flex;
       justify-content: center;
       gap: 32px;
@@ -215,7 +215,7 @@
     }
     
     /* Efeito tipo 3D */
-    .card-depoimento {
+    .cardDepoimento {
       width: 280px;
       height: 360px;
       perspective: 1000px;
@@ -224,7 +224,7 @@
     }
     
     /* parte interna que gira */
-    .card-interno {
+    .cardInterno {
       width: 100%;
       height: 100%;
       position: relative;
@@ -232,13 +232,13 @@
       transition: transform 0.65s ease;
     }
 
-    .card-depoimento:hover .card-interno {
+    .cardDepoimento:hover .cardInterno {
       transform: rotateY(180deg);
     }
     
     /* estilos do card */
-    .card-frente,
-    .card-verso {
+    .cardFrente,
+    .cardVerso {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -248,11 +248,11 @@
     }
     
     /* frente */
-    .card-frente {
+    .cardFrente {
       overflow: hidden;
     }
     
-    .card-frente img {
+    .cardFrente img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -260,7 +260,7 @@
     }
     
     /* nome do desbravador */
-    .nome-overlay {
+    .nomeOverlay {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -274,7 +274,7 @@
     }
     
     /* verso */
-    .card-verso {
+    .cardVerso {
       background: #fff;
       transform: rotateY(180deg);
       display: flex;
@@ -285,7 +285,7 @@
       gap: 14px;
     }
     
-    .card-verso h3 {
+    .cardVerso h3 {
       font-size: 15px;
       font-weight: 700;
       color: #004aad;
@@ -293,7 +293,7 @@
       margin: 0;
     }
     
-    .card-verso p {
+    .cardVerso p {
       font-size: 13px;
       color: #333;
       line-height: 1.6;
@@ -312,7 +312,7 @@
       align-items: center;
     }
 
-    .contato-container {
+    .contatoContainer {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -322,17 +322,17 @@
     }
 
     /* contato - lado esquerdo */
-    .contato-texto h1 {
+    .contatoTexto h1 {
       font-size: 36px;
       margin-bottom: 15px;
     }
 
-    .contato-texto p {
+    .contatoTexto p {
       max-width: 400px;
       font-size: 16px;
     }
 
-    .contato-texto button {
+    .contatoTexto button {
       margin: 20px 0;
       background: #3b8fff;
       color: #002e6b;
@@ -353,11 +353,11 @@
     }
 
     /* contato - lado direito */
-    .contato-imagem {
+    .contatoImagem {
       position: relative;
     }
 
-    .contato-imagem img {
+    .contatoImagem img {
       width: 500px;
       height: 350px;
       border-radius: 40px;
@@ -386,7 +386,7 @@
       font-size: 19px;
     }
 
-    .sobre-img img {
+    .sobreImg img {
       width: 380px;
     }
 
@@ -398,12 +398,12 @@
       transform: scale(1.1);
     }
 
-    .container-depoimentos {
+    .containerDepoimentos {
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    .imagens-depoimentos img {
+    .imagensDepoimentos img {
       width: 100px;
       height: 100px;
     }
@@ -422,7 +422,7 @@
       padding: 50px 60px 20px;
     }
 
-    .footer-container {
+    .footerContainer {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;

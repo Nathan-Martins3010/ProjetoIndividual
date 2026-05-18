@@ -23,4 +23,8 @@ router.get("/kpis", function (req, res) {
     respostaController.buscarKpis(req, res);
 });
 
+router.post("/salvarResposta", function (req, res) {
+    respostaController.salvarResposta(req, res);
+});
+
 module.exports = router;

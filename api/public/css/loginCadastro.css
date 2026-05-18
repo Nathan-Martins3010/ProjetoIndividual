@@ -195,7 +195,8 @@ p {
 }
 
 .inpEmail,
-.inpSenha {
+.inpSenha, 
+.inpCodigo {
     margin-bottom: 20px;
 }
 

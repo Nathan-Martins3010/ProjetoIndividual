@@ -1,4 +1,19 @@
+const { salvarFormulario } = require("../controllers/respostaController");
 var database = require("../database/config");
+
+function salvarResposta(fkUsuario, dtNascimento, sexo, tempoClube, classe, especialidade, 
+    qtdEspecialidades, frequencia, acampamento, lideranca) {
+    var instrucaoSql = `
+        INSERT INTO respostaFormulario 
+        (fkUsuario, dtNascimentoUsuario, sexo, tempoClube, classe, especialidadeFavorita, 
+         qtdEspecialidades, frequencia, participaAcampamento, interesseLideranca)
+        VALUES 
+        ('${fkUsuario}', '${dtNascimento}', '${sexo}', '${tempoClube}', '${classe}', 
+         '${especialidade}', '${qtdEspecialidades}', '${frequencia}', '${acampamento}', '${lideranca}')
+    `;
+    console.log("Executando SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 // Busca os dados para o gráfico de distribuição por sexo
 function buscarDistribuicaoSexo() {
@@ -70,5 +85,6 @@ module.exports = {
     buscarMembrosPorClasse,
     buscarFrequenciaMensal,
     buscarRankingEspecialidades,
-    buscarKpis
+    buscarKpis,
+    salvarResposta
 }

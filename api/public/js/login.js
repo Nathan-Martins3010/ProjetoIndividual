@@ -1,6 +1,7 @@
 function LogEntrar() {
     var email = document.getElementById("inpEmail").value;
     var senha = document.getElementById("inpSenha").value;
+    var codigo = document.getElementById("inpCodigo").value;
 
     // Verifica se os campos estão vazios
     if (email == "" || senha == "") {
@@ -13,7 +14,8 @@ function LogEntrar() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         emailServer: email,
-        senhaServer: senha
+        senhaServer: senha,
+        codigoServer: codigo
       })
     }).then(function (resposta) {
 
@@ -24,7 +26,12 @@ function LogEntrar() {
           sessionStorage.NOME_USUARIO = json.nome;
           sessionStorage.EMAIL_USUARIO = json.email;
 
-          // Redireciona para a home após login
+                // Salva se é diretor (código correto = acesso à dashboard)
+                sessionStorage.DIRETOR = (codigo === "desbDiretor") ? "true" : "false";
+
+                // Alert de boas-vindas
+                alert("Login realizado com sucesso! Bem-vindo, " + json.nome + "!");
+
           window.location = "/index.html";
         });
       } else {

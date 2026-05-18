@@ -1,7 +1,7 @@
 function CadCadastrar() {
-    var nome      = document.getElementById("inpNome").value;
-    var email     = document.getElementById("inpEmail").value;
-    var senha     = document.getElementById("inpSenha").value;
+    var nome = document.getElementById("inpNome").value;
+    var email = document.getElementById("inpEmail").value;
+    var senha = document.getElementById("inpSenha").value;
     var senhaConf = document.getElementById("inpSenhaConf").value;
 
     // Verifica se os campos estão vazios

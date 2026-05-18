@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard — Clube de Desbravadores</title>
   <link rel="stylesheet" href="css/dashboard.css">
+  <script src="./js/navbar.js"></script>
   <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Chart.js -->
@@ -12,210 +13,227 @@
 </head>
 <body>
 
-  <header>
-    <h2>CONEXÃO DESBRAVADOR</h2>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="classesEspecialidades.html">Classes e Especialidades</a>
-      <a href="#contato">Contato</a>
-      <a href="formulario.html">Formulário</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
+    <header>
+        <h2>CONEXÃO DESBRAVADOR</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="classesEspecialidades.html">Classes e Especialidades</a>
+            <a href="index.html#contato">Contato</a>
+            <a href="formulario.html">Formulário</a>
+            <a href="login.html" id="navLogin">Login</a>
+
+            <!-- Ícone do usuário -->
+            <span id="navUsuario" style="display:none; align-items:center; gap:6px; color:#fff; margin-left:16px;">
+                <span style="font-size:18px;">👤</span>
+                <span id="nomeUsuario" style="font-size:14px; font-weight:600;"></span>
+            </span>
+        </nav>
+    </header>
 
   <!-- Cabeçalho -->
-  <div class="db-header">
-    <div>
-      <h1>Dashboard — Clube de Desbravadores</h1>
-      <!-- Texto atualizado dinamicamente com o total de respostas do banco -->
-      <p id="totalRespostas">Carregando dados...</p>
-    </div>
-    <img src="https://files.adventistas.org/institucional/pt/sites/20/2013/03/18160828/D1.png" alt="" class="db-logo">
+<div class="dbHeader">
+  <div>
+    <h1>Dashboard — Clube de Desbravadores</h1>
+    <p id="totalRespostas">Carregando dados...</p>
   </div>
+  <img src="https://files.adventistas.org/institucional/pt/sites/20/2013/03/18160828/D1.png" alt="" class="dbLogo">
+</div>
 
-  <!-- Layout principal: sidebar + gráficos -->
-  <div class="db-layout">
+<!-- Layout principal -->
+<div class="dbLayout">
 
-    <!-- Sidebar Esquerda -->
-    <div class="sidebar">
+  <!-- Sidebar -->
+  <div class="barraLateral">
 
-      <!-- Cartão do índice de engajamento geral -->
-      <div class="index-card">
-        <h3>Índice de engajamento</h3>
+    <div class="indexCard">
+      <h3>Índice de engajamento</h3>
 
-        <!-- Círculo com o percentual do índice — atualizado pelo JS -->
-        <div class="index-topo">
-          <div class="index-circulo">
-            <span class="pct" id="indiceEngajamento">--</span>
-            <span class="lbl">ÍNDICE</span>
-          </div>
-          <p class="index-desc">Média ponderada de frequência, acampamentos e interesse em liderança.</p>
+      <div class="indexTopo">
+        <div class="indexCirculo">
+          <span class="pct" id="indiceEngajamento">--</span>
+          <span class="indexTitulo">ÍNDICE</span>
         </div>
-
-        <!-- Mini barras — largura e percentual atualizados pelo JS -->
-        <div class="index-bars">
-
-          <!-- Frequência média dos membros -->
-          <div class="mini-bar-linha">
-            <span class="mini-bar-label">Frequência</span>
-            <div class="mini-barra-trilha">
-              <div class="mini-barra-preenchimento" id="barraFreq" style="width:0%"></div>
-            </div>
-            <span class="mini-bar-pct" id="pctFreq">--%</span>
-          </div>
-
-          <!-- Participação em acampamentos -->
-          <div class="mini-bar-linha">
-            <span class="mini-bar-label">Acampamentos</span>
-            <div class="mini-barra-trilha">
-              <div class="mini-barra-preenchimento" id="barraAcamp" style="width:0%"></div>
-            </div>
-            <span class="mini-bar-pct" id="pctAcamp">--%</span>
-          </div>
-
-          <!-- Interesse em assumir liderança -->
-          <div class="mini-bar-linha">
-            <span class="mini-bar-label">Liderança</span>
-            <div class="mini-barra-trilha">
-              <div class="mini-barra-preenchimento" id="barraLider" style="width:0%"></div>
-            </div>
-            <span class="mini-bar-pct" id="pctLider">--%</span>
-          </div>
-
-        </div>
+        <p class="indexDesc">
+          Média ponderada de frequência, acampamentos e interesse em liderança.
+        </p>
       </div>
 
-      <!-- KPIs de perfil dos membros -->
-      <div class="sidebar-titulo-secao">Perfil</div>
-      <div class="kpi-card">
+      <div class="indexBarras">
 
-        <!-- Média de idade — id usado pelo JS para atualizar o valor -->
-        <div class="kpi-item">
-          <span class="kpi-label">Média de idade</span>
-          <div class="kpi-right">
-            <span class="kpi-valor" id="kpiIdade">--</span>
-            <span class="kpi-contexto">anos</span>
+        <div class="miniBarLinha">
+          <span class="miniBarTitulo">Frequência</span>
+
+          <div class="miniBarraTrilha">
+            <div class="miniBarraPreenchimento" id="barraFreq" style="width:0%"></div>
           </div>
+
+          <span class="miniBarPct" id="pctFreq">--%</span>
         </div>
 
-        <!-- Tempo médio que os membros estão no clube -->
-        <div class="kpi-item">
-          <span class="kpi-label">Tempo no clube</span>
-          <div class="kpi-right">
-            <span class="kpi-valor" id="kpiTempo">--</span>
-            <span class="kpi-contexto">meses</span>
+        <div class="miniBarLinha">
+          <span class="miniBarTitulo">Acampamentos</span>
+
+          <div class="miniBarraTrilha">
+            <div class="miniBarraPreenchimento" id="barraAcamp" style="width:0%"></div>
           </div>
+
+          <span class="miniBarPct" id="pctAcamp">--%</span>
         </div>
 
-        <!-- Quantidade média de especialidades concluídas por pessoa -->
-        <div class="kpi-item">
-          <span class="kpi-label">Especialidades</span>
-          <div class="kpi-right">
-            <span class="kpi-valor" id="kpiEspecialidades">--</span>
-            <span class="kpi-contexto">por pessoa</span>
+        <div class="miniBarLinha">
+          <span class="miniBarTitulo">Liderança</span>
+
+          <div class="miniBarraTrilha">
+            <div class="miniBarraPreenchimento" id="barraLider" style="width:0%"></div>
           </div>
+
+          <span class="miniBarPct" id="pctLider">--%</span>
         </div>
 
       </div>
+    </div>
 
-      <!-- KPIs de engajamento dos membros -->
-      <div class="sidebar-titulo-secao">Engajamento</div>
-      <div class="kpi-card">
+    <!-- Perfil -->
+    <div class="lateralTituloSecao">Perfil</div>
 
-        <!-- Frequência mensal média -->
-        <div class="kpi-item">
-          <span class="kpi-label">Frequência</span>
-          <div class="kpi-right">
-            <span class="kpi-valor" id="kpiFrequencia">--</span>
-            <span class="kpi-contexto">por mês</span>
-          </div>
+    <div class="kpiCard">
+
+      <div class="kpiItem">
+        <span class="kpiTitulo">Média de idade</span>
+
+        <div class="kpiDireita">
+          <span class="kpiValor" id="kpiIdade">--</span>
+          <span class="kpiContexto">anos</span>
         </div>
+      </div>
 
-        <!-- Percentual de membros que participam de acampamentos -->
-        <div class="kpi-item">
-          <span class="kpi-label">Acampamentos</span>
-          <div class="kpi-right">
-            <span class="kpi-valor" id="kpiAcampamento">--</span>
-            <span class="kpi-contexto">participam</span>
-          </div>
+      <div class="kpiItem">
+        <span class="kpiTitulo">Tempo no clube</span>
+
+        <div class="kpiDireita">
+          <span class="kpiValor" id="kpiTempo">--</span>
+          <span class="kpiContexto">meses</span>
         </div>
+      </div>
 
-        <!-- Percentual de membros com interesse em liderança -->
-        <div class="kpi-item">
-          <span class="kpi-label">Liderança</span>
-          <div class="kpi-right">
-            <span class="kpi-valor" id="kpiLideranca">--</span>
-            <span class="kpi-contexto">têm interesse</span>
-          </div>
+      <div class="kpiItem">
+        <span class="kpiTitulo">Especialidades</span>
+
+        <div class="kpiDireita">
+          <span class="kpiValor" id="kpiEspecialidades">--</span>
+          <span class="kpiContexto">por pessoa</span>
         </div>
-
       </div>
 
     </div>
 
-    <!-- ÁREA PRINCIPAL — GRÁFICOS -->
-    <div class="charts-area">
+    <!-- Engajamento -->
+    <div class="lateralTituloSecao">Engajamento</div>
 
-      <!-- Gráfico de membros masculinos e femininos -->
-      <div class="chart-card">
-        <p class="grafico-titulo">Distribuição por sexo</p>
-        <p class="grafico-subtitulo">Composição do grupo</p>
-        <!-- Legenda atualizada pelo JS com os percentuais reais -->
-        <div class="legend-linha">
-          <span class="legend-item">
-            <span class="legenda-quadrado" style="background:#004aad"></span>
-            <span id="legendaMasc">Masculino</span>
-          </span>
-          <span class="legend-item">
-            <span class="legenda-quadrado" style="background:#3b8fff"></span>
-            <span id="legendaFem">Feminino</span>
-          </span>
-        </div>
-        <div style="position:relative; width:100%; height:260px;">
-          <canvas id="chartSexo" role="img" aria-label="Gráfico de rosca com distribuição por sexo."></canvas>
+    <div class="kpiCard">
+
+      <div class="kpiItem">
+        <span class="kpiTitulo">Frequência</span>
+
+        <div class="kpiDireita">
+          <span class="kpiValor" id="kpiFrequencia">--</span>
+          <span class="kpiContexto">por mês</span>
         </div>
       </div>
 
-      <!-- Ranking das especialidades mais escolhidas -->
-      <div class="chart-card">
-        <p class="grafico-titulo">Especialidades favoritas</p>
-        <p class="grafico-subtitulo">TOP 6 das mais escolhidas</p>
-        <!-- Lista preenchida dinamicamente pelo JS com os dados do banco -->
-        <ul class="ranking-list" id="rankingEsp"></ul>
-      </div>
+      <div class="kpiItem">
+        <span class="kpiTitulo">Acampamentos</span>
 
-      <!-- Gráfico de quantidade de membros em cada classe -->
-      <div class="chart-card">
-        <p class="grafico-titulo">Membros por classe</p>
-        <p class="grafico-subtitulo">Pirâmide de progressão do clube</p>
-        <div class="legend-linha">
-          <span class="legend-item">
-            <span class="legenda-quadrado" style="background:#004aad"></span>Qtd. de membros
-          </span>
-        </div>
-        <div style="position:relative; width:100%; height:260px;">
-          <canvas id="chartClasses" role="img" aria-label="Gráfico de barras com membros por classe."></canvas>
+        <div class="kpiDireita">
+          <span class="kpiValor" id="kpiAcampamento">--</span>
+          <span class="kpiContexto">participam</span>
         </div>
       </div>
 
-      <!-- Gráfico de distribuição de frequência mensal dos membros -->
-      <div class="chart-card">
-        <p class="grafico-titulo">Frequência mensal</p>
-        <p class="grafico-subtitulo">Quantos membros vão ao clube cada quantidade de vezes por mês</p>
-        <div class="legend-linha">
-          <span class="legend-item">
-            <span class="legenda-quadrado" style="background:#3b8fff"></span>Quantidade de membros
-          </span>
-        </div>
-        <div style="position:relative; width:100%; height:260px;">
-          <canvas id="chartFreq" role="img" aria-label="Gráfico de barras com frequência mensal."></canvas>
+      <div class="kpiItem">
+        <span class="kpiTitulo">Liderança</span>
+
+        <div class="kpiDireita">
+          <span class="kpiValor" id="kpiLideranca">--</span>
+          <span class="kpiContexto">têm interesse</span>
         </div>
       </div>
 
     </div>
 
   </div>
+
+  <!-- Gráficos -->
+  <div class="areaGraficos">
+
+    <div class="graficoCard">
+      <p class="graficoTitulo">Distribuição por sexo</p>
+      <p class="graficoSubtitulo">Composição do grupo</p>
+
+      <div class="legendaLinha">
+
+        <span class="legendaItem">
+          <span class="legendaQuadrado" style="background:#004aad"></span>
+          <span id="legendaMasc">Masculino</span>
+        </span>
+
+        <span class="legendaItem">
+          <span class="legendaQuadrado" style="background:#3b8fff"></span>
+          <span id="legendaFem">Feminino</span>
+        </span>
+
+      </div>
+
+      <div style="position:relative; width:100%; height:260px;">
+        <canvas id="graficoSexo"></canvas>
+      </div>
+    </div>
+
+    <div class="graficoCard">
+      <p class="graficoTitulo">Especialidades favoritas</p>
+      <p class="graficoSubtitulo">TOP 6 das mais escolhidas</p>
+
+      <ul class="rankingLista" id="rankingEsp"></ul>
+    </div>
+
+    <div class="graficoCard">
+      <p class="graficoTitulo">Membros por classe</p>
+      <p class="graficoSubtitulo">Pirâmide de progressão do clube</p>
+
+      <div class="legendaLinha">
+        <span class="legendaItem">
+          <span class="legendaQuadrado" style="background:#004aad"></span>
+          Qtd. de membros
+        </span>
+      </div>
+
+      <div style="position:relative; width:100%; height:260px;">
+        <canvas id="graficoClasses"></canvas>
+      </div>
+    </div>
+
+    <div class="graficoCard">
+      <p class="graficoTitulo">Frequência mensal</p>
+      <p class="graficoSubtitulo">
+        Quantos membros vão ao clube cada quantidade de vezes por mês
+      </p>
+
+      <div class="legendaLinha">
+        <span class="legendaItem">
+          <span class="legendaQuadrado" style="background:#3b8fff"></span>
+          Quantidade de membros
+        </span>
+      </div>
+
+      <div style="position:relative; width:100%; height:260px;">
+        <canvas id="graficoFreq"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 
 </body>
 </html>
@@ -226,6 +244,10 @@
   Chart.defaults.font.family = 'Nunito, sans-serif';
   Chart.defaults.font.size = 13;
 
+  // Verifica se o usuário está logado — se não estiver, manda para o login
+  if (!sessionStorage.ID_USUARIO || sessionStorage.DIRETOR !== "true") {
+      window.location = "/login.html";
+  }
   // Carrega todos os dados do banco quando a página abre
   window.onload = function () {
       carregarKpis();
@@ -290,7 +312,7 @@
                       else document.getElementById('legendaFem').textContent = txt + ' ' + pct + '%';
                   });
 
-                  new Chart(document.getElementById('chartSexo'), {
+                  new Chart(document.getElementById('graficoSexo'), {
                       type: 'doughnut',
                       data: {
                           labels: labels,
@@ -329,7 +351,7 @@
                   var labels = dados.map(d => d.classe);
                   var valores = dados.map(d => d.total);
 
-                  new Chart(document.getElementById('chartClasses'), {
+                  new Chart(document.getElementById('graficoClasses'), {
                       type: 'bar',
                       data: {
                           labels: labels,
@@ -365,7 +387,7 @@
                   var labels = dados.map(d => d.frequencia + '× por mês');
                   var valores = dados.map(d => d.total);
 
-                  new Chart(document.getElementById('chartFreq'), {
+                  new Chart(document.getElementById('graficoFreq'), {
                       type: 'bar',
                       data: {
                           labels: labels,
@@ -404,19 +426,20 @@
                   lista.innerHTML = '';
 
                   // Para cada especialidade cria um item com a barra proporcional ao total de votos
-                  dados.forEach(function (d, i) {
+                  for (var i = 0; i < dados.length; i++) {
+                      var d = dados[i];
                       var pct = Math.round(d.total / maxTotal * 100);
                       lista.innerHTML += `
                           <li>
-                              <span class="rank-num">${i + 1}</span>
+                              <span class="rankNum">${i + 1}</span>
                               ${d.especialidadeFavorita}
-                              <div class="rank-bar-wrap">
-                                  <div class="rank-bar" style="width:${pct}%"></div>
+                              <div class="rankBarWrap">
+                                  <div class="rankBar" style="width:${pct}%"></div>
                               </div>
-                              <span class="rank-contagem">${d.total}</span>
+                              <span class="rankContagem">${d.total}</span>
                           </li>
                       `;
-                  });
+                  }
               });
           }
       });

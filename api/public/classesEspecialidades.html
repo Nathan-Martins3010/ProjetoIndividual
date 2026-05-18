@@ -8,20 +8,27 @@
   <link rel="stylesheet" href="css/classesEspecialidades.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="js/classesEspecialidades.js"></script>
+  <script src="./js/navbar.js"></script>
 </head>
 <body>
 
-  <header>
-    <h2>CONEXÃO DESBRAVADOR</h2>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="classesEspecialidades.html">Classes e Especialidades</a>
-      <a href="#contato">Contato</a>
-      <a href="formulario.html">Formulário</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
+    <header>
+      <h2>CONEXÃO DESBRAVADOR</h2>
+      <nav>
+          <a href="index.html">Home</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="classesEspecialidades.html">Classes e Especialidades</a>
+          <a href="index.html#contato">Contato</a>
+          <a href="formulario.html">Formulário</a>
+          <a href="login.html" id="navLogin">Login</a>
+
+          <!-- Ícone do usuário -->
+          <span id="navUsuario" style="display:none; align-items:center; gap:6px; color:#fff; margin-left:16px;">
+              <span style="font-size:18px;">👤</span>
+              <span id="nomeUsuario" style="font-size:14px; font-weight:600;"></span>
+          </span>
+      </nav>
+    </header>
 
   <!-- Topo da página -->
   <div class="headerSecundario">

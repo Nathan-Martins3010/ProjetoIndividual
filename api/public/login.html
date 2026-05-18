@@ -9,24 +9,26 @@
     <link rel="stylesheet" href="css/loginCadastro.css">
     <link rel="shortcut icon" href="Assets/img/favicon.ico" type="image/x-icon">
     <script src="js/login.js"></script>
+    <script src="./js/navbar.js"></script>
 </head>
 
-<!-- Fazer login com diretor, pegar codigo especifico - fazer no banco.
-    fazer alguma coisa(alert, por exemplo falando bem vindo e o nome da pessoa)
-    e fazer as modificações pra quando o usuario logar aparecer a aba de dashboards
- -->
 <body>
-    <!-- HEADER -->
         <header>
-                <h2>CONEXÃO DESBRAVADOR</h2>
-                <nav>
-                    <a href="index.html">Home</a>
-                    <a href="dashboard.html">Dashboard</a>
-                    <a href="classesEspecialidades.html">Classes e Especialidades</a>
-                    <a href="#contato">Contato</a>
-                    <a href="formulario.html">Formulário</a>
-                    <a href="login.html">Login</a>
-                </nav>
+            <h2>CONEXÃO DESBRAVADOR</h2>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="classesEspecialidades.html">Classes e Especialidades</a>
+                <a href="index.html#contato">Contato</a>
+                <a href="formulario.html">Formulário</a>
+                <a href="login.html" id="navLogin">Login</a>
+
+                <!-- Ícone do usuário logado — começa escondido -->
+                <span id="navUsuario" style="display:none; align-items:center; gap:6px; color:#fff; margin-left:16px;">
+                    <span style="font-size:18px;">👤</span>
+                    <span id="nomeUsuario" style="font-size:14px; font-weight:600;"></span>
+                </span>
+            </nav>
         </header>
 
     <div class="container">
@@ -37,6 +39,7 @@
             <div class="input login">
                 <input type="text" id="inpEmail" placeholder="Email">
                 <input type="password" id="inpSenha" placeholder="Senha">
+                <input type="text" id="inpCodigo" placeholder="Codigo de diretor">
             </div>
 
           <button onclick="LogEntrar()" class="button">Entrar</button>

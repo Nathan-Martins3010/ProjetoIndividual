@@ -69,19 +69,44 @@
 
     // Mostra apenas os cards da página atual
     function renderCards() {
-      todasEsp.forEach(c => c.style.display = 'none');
-      const inicio = paginaAtual * porPagina;
-      visiveis.slice(inicio, inicio + porPagina).forEach(c => c.style.display = 'flex');
-      renderDots();
+        for (var i = 0; i < todasEsp.length; i++) {
+            todasEsp[i].style.display = 'none';
+        }
+
+        // Mostra apenas os cards da página atual
+        var inicio = paginaAtual * porPagina;
+        var fim = inicio + porPagina;
+        for (var i = inicio; i < fim && i < visiveis.length; i++) {
+            visiveis[i].style.display = 'flex';
+        }
+
+        renderDots();
     }
 
     // Filtra os cards pela categoria selecionada
     function filtrar(btn, cat) {
-      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
-      btn.classList.add('ativo');
-      visiveis = cat === 'todas' ? todasEsp : todasEsp.filter(c => c.dataset.cat === cat);
-      paginaAtual = 0;
-      renderCards();
+        // Remove a classe ativo de todos os botões de filtro
+        var botoes = document.querySelectorAll('.filtro-btn');
+        for (var i = 0; i < botoes.length; i++) {
+            botoes[i].classList.remove('ativo');
+        }
+
+        btn.classList.add('ativo');
+
+        // Filtra os cards pela categoria selecionada
+        if (cat === 'todas') {
+            visiveis = todasEsp;
+        } else {
+            visiveis = [];
+            for (var i = 0; i < todasEsp.length; i++) {
+                if (todasEsp[i].dataset.cat === cat) {
+                    visiveis.push(todasEsp[i]);
+                }
+            }
+        }
+
+        paginaAtual = 0;
+        renderCards();
     }
 
     renderCards();
