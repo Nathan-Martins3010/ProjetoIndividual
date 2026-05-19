@@ -2,19 +2,19 @@
 function atualizarNavbar() {
     var nome      = sessionStorage.NOME_USUARIO;
     var linkLogin = document.getElementById('navLogin');
-    var usuarioEl = document.getElementById('navUsuario');
+    var usuarioElemento = document.getElementById('navUsuario');
 
     if (nome) {
         // Usuário logado — troca Login por Logout
         linkLogin.textContent = 'Logout';
-        linkLogin.href        = '#';
-        linkLogin.onclick     = function () {
+        linkLogin.href = '#';
+        linkLogin.onclick= function () {
             sessionStorage.clear();
             window.location = '/index.html';
         };
 
         // Mostra o ícone com o nome do usuário
-        usuarioEl.style.display = 'flex';
+        usuarioElemento.style.display = 'flex';
         document.getElementById('nomeUsuario').textContent = nome;
     }
 }

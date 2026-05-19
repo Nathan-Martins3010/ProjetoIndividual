@@ -26,10 +26,9 @@ function LogEntrar() {
           sessionStorage.NOME_USUARIO = json.nome;
           sessionStorage.EMAIL_USUARIO = json.email;
 
-                // Salva se é diretor (código correto = acesso à dashboard)
+                // Salva se é diretor
                 sessionStorage.DIRETOR = (codigo === "desbDiretor") ? "true" : "false";
 
-                // Alert de boas-vindas
                 alert("Login realizado com sucesso! Bem-vindo, " + json.nome + "!");
 
           window.location = "/index.html";

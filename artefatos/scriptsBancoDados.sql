@@ -1,9 +1,11 @@
+-- mysql -u aluno(Sptech#2024) -p
+
 CREATE DATABASE clubeDesbravadores;
 
 USE clubeDesbravadores;
 
 CREATE TABLE usuario (
-		codigoUsuario INT PRIMARY KEY AUTO_INCREMENT,
+		idUsuario INT PRIMARY KEY AUTO_INCREMENT,
         nomeUsuario VARCHAR (45),
         emailUsuario VARCHAR (45),
         senhaUsuario VARCHAR (20)
@@ -40,5 +42,7 @@ VALUES
 (3, '2007-11-02', 'F', 6, 'Pesquisador', 'Culinária', 10, 10, 'Sim', 'Sim'),
 (4, '2008-08-15', 'F', 2, 'Amigo', 'Ordem Unida', 4, 6, 'Nao', 'Nao'),
 (5, '2006-12-01', 'M', 7, 'Guia', 'Acampamento', 12, 10, 'Sim', 'Sim');
+
 SELECT * FROM respostaFormulario;
 SELECT * FROM usuario;
+

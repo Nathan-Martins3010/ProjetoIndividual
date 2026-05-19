@@ -106,18 +106,6 @@ header nav a:hover {
   gap: 12px 20px;
 }
 
-/* responsividade */
-@media (max-width: 480px) {
-
-  .grid2 {
-    grid-template-columns: 1fr;
-  }
-
-  .campo.campoInteiro {
-    grid-column: 1;
-  }
-
-}
 
 .campo {
   display: flex;
@@ -141,6 +129,7 @@ label {
 /* Campos */
 input[type="text"],
 input[type="number"],
+input[type="date"],
 select {
   font-family: 'Nunito', sans-serif;
   font-size: 14px;
