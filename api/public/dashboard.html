@@ -262,7 +262,7 @@
       fetch('/respostas/kpis').then(function (res) {
           if (res.ok) {
               res.json().then(function (dados) {
-                  var kpi = dados[0];
+                  let kpi = dados[0];
 
                   // Atualiza os valores numéricos na sidebar
                   document.getElementById('kpiIdade').textContent = kpi.mediaIdade;
@@ -273,8 +273,8 @@
                   document.getElementById('kpiLideranca').textContent = kpi.pctLideranca + '%';
 
                   // Calcula o índice de engajamento como média dos três componentes
-                  var freqPct = Math.min(Math.round(kpi.mediaFrequencia / 4 * 100), 100);
-                  var indice = Math.round((kpi.pctAcampamento + kpi.pctLideranca + freqPct) / 3);
+                  let freqPct = Math.min(Math.round(kpi.mediaFrequencia / 4 * 100), 100);
+                  let indice = Math.round((kpi.pctAcampamento + kpi.pctLideranca + freqPct) / 3);
                   document.getElementById('indiceEngajamento').textContent = indice + '%';
 
                   // Atualiza a largura das mini barras e os percentuais ao lado
@@ -300,17 +300,23 @@
               res.json().then(function (dados) {
 
                   // Monta os arrays de labels e valores vindos do banco
-                  var labels = dados.map(d => d.sexo === 'M' ? 'Masculino' : 'Feminino');
-                  var valores = dados.map(d => d.total);
-                  var total = valores.reduce((a, b) => a + b, 0);
+                  let labels = dados.map(d => d.sexo === 'M' ? 'Masculino' : 'Feminino');
+                  let valores = dados.map(d => d.total);
+                  let total = valores.reduce((a, b) => a + b, 0);
 
                   // Atualiza a legenda com os percentuais reais vindos do banco
-                  dados.forEach(d => {
-                      var pct = Math.round(d.total / total * 100);
-                      var txt = d.sexo === 'M' ? 'Masculino' : 'Feminino';
-                      if (d.sexo === 'M') document.getElementById('legendaMasc').textContent = txt + ' ' + pct + '%';
-                      else document.getElementById('legendaFem').textContent = txt + ' ' + pct + '%';
-                  });
+                  for (let i = 0; i < dados.length; i++) {
+
+                      let d = dados[i];
+                      let pct = Math.round(d.total / total * 100);
+                      let txt = d.sexo === 'M' ? 'Masculino' : 'Feminino';
+
+                      if (d.sexo === 'M') {
+                          document.getElementById('legendaMasc').textContent = txt + ' ' + pct + '%';
+                      } else {
+                          document.getElementById('legendaFem').textContent = txt + ' ' + pct + '%';
+                      }
+                  }
 
                   new Chart(document.getElementById('graficoSexo'), {
                       type: 'doughnut',
@@ -348,8 +354,8 @@
           if (res.ok) {
               res.json().then(function (dados) {
 
-                  var labels = dados.map(d => d.classe);
-                  var valores = dados.map(d => d.total);
+                  let labels = dados.map(d => d.classe);
+                  let valores = dados.map(d => d.total);
 
                   new Chart(document.getElementById('graficoClasses'), {
                       type: 'bar',
@@ -384,8 +390,8 @@
           if (res.ok) {
               res.json().then(function (dados) {
 
-                  var labels = dados.map(d => d.frequencia + '× por mês');
-                  var valores = dados.map(d => d.total);
+                  let labels = dados.map(d => d.frequencia + '× por mês');
+                  let valores = dados.map(d => d.total);
 
                   new Chart(document.getElementById('graficoFreq'), {
                       type: 'bar',
@@ -421,14 +427,14 @@
           if (res.ok) {
               res.json().then(function (dados) {
 
-                  var maxTotal = dados[0].total;
-                  var lista = document.getElementById('rankingEsp');
+                  let maxTotal = dados[0].total;
+                  let lista = document.getElementById('rankingEsp');
                   lista.innerHTML = '';
 
                   // Para cada especialidade cria um item com a barra proporcional ao total de votos
-                  for (var i = 0; i < dados.length; i++) {
-                      var d = dados[i];
-                      var pct = Math.round(d.total / maxTotal * 100);
+                  for (let i = 0; i < dados.length; i++) {
+                      let d = dados[i];
+                      let pct = Math.round(d.total / maxTotal * 100);
                       lista.innerHTML += `
                           <li>
                               <span class="rankNum">${i + 1}</span>

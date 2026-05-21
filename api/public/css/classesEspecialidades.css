@@ -301,9 +301,10 @@
 
 /* Footer */
 .footer {
-  height: 7%;
+  width: 100%;
   background: #002e6b;
   color: white;
+  padding: 16px;
+  margin-top: 2rem;
   text-align: center;
-  padding: 5px;
 }

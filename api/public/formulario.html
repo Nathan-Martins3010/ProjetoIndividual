@@ -283,8 +283,8 @@
     let ok = true;
 
     // Percorre cada campo e verifica se está preenchido
-    for (var i = 0; i < ids.length; i++) {
-        var elemento = document.getElementById(ids[i]);
+    for (let i = 0; i < ids.length; i++) {
+        let elemento = document.getElementById(ids[i]);
         if (!elemento.value) {
             elemento.classList.add('error');
             ok = false;
@@ -296,7 +296,7 @@
     if (!ok) return;
 
     // Pega o id do usuário logado que foi salvo no login
-    var idUsuario = sessionStorage.ID_USUARIO;
+    let idUsuario = sessionStorage.ID_USUARIO;
 
     if (!idUsuario) {
         alert('Você precisa estar logado para enviar o formulário!');

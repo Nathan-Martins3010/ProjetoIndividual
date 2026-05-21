@@ -1,7 +1,7 @@
 function LogEntrar() {
-    var email = document.getElementById("inpEmail").value;
-    var senha = document.getElementById("inpSenha").value;
-    var codigo = document.getElementById("inpCodigo").value;
+    let email = document.getElementById("inpEmail").value;
+    let senha = document.getElementById("inpSenha").value;
+    let codigo = document.getElementById("inpCodigo").value;
 
     // Verifica se os campos estão vazios
     if (email == "" || senha == "") {

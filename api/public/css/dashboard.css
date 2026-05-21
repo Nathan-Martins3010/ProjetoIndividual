@@ -34,6 +34,11 @@
         font-size: 18px;
         }
 
+        header nav {
+          display: flex;
+          align-items: center;
+        }
+
         header nav a {
         color: #fff;
         margin-left: 20px;
