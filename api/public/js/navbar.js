@@ -1,6 +1,6 @@
 // Atualiza a navbar com base na sessão do usuário
 function atualizarNavbar() {
-    let nome      = sessionStorage.NOME_USUARIO;
+    let nome = sessionStorage.NOME_USUARIO;
     let linkLogin = document.getElementById('navLogin');
     let usuarioElemento = document.getElementById('navUsuario');
 

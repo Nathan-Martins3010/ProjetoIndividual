@@ -50,8 +50,14 @@
       document.getElementById('modalNivel').textContent = c.nivel;
       document.getElementById('modalTitulo').textContent = c.titulo;
       document.getElementById('modalDesc').textContent = c.desc;
-      document.getElementById('modalTags').innerHTML = c.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
-      document.getElementById('modalFundo').classList.add('aberto');
+
+      // Monta as tags da classe uma por uma
+        let htmlTags = '';
+        for (let i = 0; i < c.tags.length; i++) {
+            htmlTags += '<span class="modal-tag">' + c.tags[i] + '</span>';
+        }
+        document.getElementById('modalTags').innerHTML = htmlTags;
+        document.getElementById('modalFundo').classList.add('aberto');
     }
 
     function fecharModal(e) {

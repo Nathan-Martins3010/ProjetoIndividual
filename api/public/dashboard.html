@@ -192,7 +192,7 @@
 
     <div class="graficoCard">
       <p class="graficoTitulo">Especialidades favoritas</p>
-      <p class="graficoSubtitulo">TOP 6 das mais escolhidas</p>
+      <p class="graficoSubtitulo">TOP 8 das mais escolhidas</p>
 
       <ul class="rankingLista" id="rankingEsp"></ul>
     </div>
@@ -300,9 +300,26 @@
               res.json().then(function (dados) {
 
                   // Monta os arrays de labels e valores vindos do banco
-                  let labels = dados.map(d => d.sexo === 'M' ? 'Masculino' : 'Feminino');
-                  let valores = dados.map(d => d.total);
-                  let total = valores.reduce((a, b) => a + b, 0);
+                  let labels = []
+                  
+                  for(let i = 0; i < dados.length; i++){
+                      if(dados[i].sexo == 'M'){
+                         labels.push('Masculino')
+                      } else {
+                         labels.push('Feminino')
+                      }
+                  }
+
+                  let valores = []
+                  for(i = 0; i < dados.length; i++){
+                     valores.push(dados[i].total)
+                  }
+                  
+                  // calcula total de membros para calcular porcentagem de sexo
+                  var total = 0;
+                    for (var i = 0; i < valores.length; i++) {
+                        total = total + valores[i];
+                    }
 
                   // Atualiza a legenda com os percentuais reais vindos do banco
                   for (let i = 0; i < dados.length; i++) {
@@ -354,8 +371,15 @@
           if (res.ok) {
               res.json().then(function (dados) {
 
-                  let labels = dados.map(d => d.classe);
-                  let valores = dados.map(d => d.total);
+                  let labels = []
+                  for(let i = 0; i < dados.length; i++){
+                      labels.push(dados[i].classe)
+                  };
+
+                 let valores = []
+                 for(let i = 0; i < dados.length; i++){
+                      valores.push(dados[i].total)
+                 }
 
                   new Chart(document.getElementById('graficoClasses'), {
                       type: 'bar',
@@ -390,8 +414,15 @@
           if (res.ok) {
               res.json().then(function (dados) {
 
-                  let labels = dados.map(d => d.frequencia + '× por mês');
-                  let valores = dados.map(d => d.total);
+                let labels = []
+                for(let i = 0; i < dados.length; i++){
+                   labels.push(dados[i].frequencia+ 'x por mês')
+                }
+
+                let valores = []
+                for(let i = 0; i < dados.length; i++){
+                   valores.push(dados[i].total)
+                }
 
                   new Chart(document.getElementById('graficoFreq'), {
                       type: 'bar',

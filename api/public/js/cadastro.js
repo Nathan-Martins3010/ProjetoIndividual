@@ -49,7 +49,6 @@ function CadCadastrar() {
         alert("Cadastro realizado com sucesso!");
         window.location = "/login.html";
       } else {
-        // Fica na tela e mostra o erro
         resposta.text().then(function (erro) {
           alert("Erro ao cadastrar: " + erro);
           console.error(erro);

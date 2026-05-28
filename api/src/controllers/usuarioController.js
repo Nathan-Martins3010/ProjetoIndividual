@@ -14,14 +14,12 @@ function autenticar(req, res) {
             .then(function (resultado) {
 
                 if (resultado.length == 1) {
-                    // Usuário encontrado — retorna os dados
                     res.json({
                         id: resultado[0].id,
                         nome: resultado[0].nome,
                         email: resultado[0].email
                     });
                 } else if (resultado.length == 0) {
-                    // Nenhum usuário encontrado
                     res.status(403).send("Email e/ou senha inválido(s)");
                 } else {
                     res.status(403).send("Mais de um usuário com o mesmo login e senha!");

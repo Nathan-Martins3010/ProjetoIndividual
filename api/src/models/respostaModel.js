@@ -1,4 +1,3 @@
-const { salvarFormulario } = require("../controllers/respostaController");
 var database = require("../database/config");
 
 function salvarResposta(fkUsuario, dtNascimento, sexo, tempoClube, classe, especialidade, 
@@ -58,7 +57,7 @@ function buscarRankingEspecialidades() {
         FROM respostaFormulario
         GROUP BY especialidadeFavorita
         ORDER BY total DESC
-        LIMIT 6
+        LIMIT 8
     `;
     console.log("Executando SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
